@@ -47,11 +47,11 @@ executes. No agent, chain, or tool call can place a live order, and the read pla
 **Stack:** Python 3.11+, FastAPI/Uvicorn, LangGraph (selective), LiteLLM, FinBERT (`transformers`), local `sentence-transformers`,
 Qdrant, SQLite, Langfuse, `httpx`/`tenacity`, Pytest + `pytest-asyncio` + `respx`, Docker Compose, GitHub Actions.
 
-**Proposed monorepo layout (not yet created):**
+**Monorepo layout** (a uv workspace; each app has its own `pyproject.toml` and `src/` layout):
 
 ```
-packages/{papertrade, zeromind, zeromind_executor, announcements_mcp}/
-web/            docs/{architecture.md, adr/}      docker-compose.yml      .github/workflows/
+apps/{zeromind, zeromind_executor, papertrade, announcements_mcp, kite_readonly_proxy}/
+tests/architecture/   web/ (later)   docs/{architecture.md, adr/}   .github/workflows/
 ```
 
 ## Scope
@@ -107,3 +107,4 @@ lab universe · personal-use tool, not investment advice (SEBI considerations if
 ## Revision history
 
 - **v0.1 (2026-09-20)** — initial version from the design review; to be refined in later sub-versions from feedback.
+- **v0.1.1 (2026-09-20)** — P0 skeleton on `feature/1.0.0`: uv workspace under `apps/`, ports, provenance primitives, `OrderProposal` hashing, proxy allowlist, lab clocks, CI, and architecture boundary tests. Earlier flat skeleton from `feature/0.0.1` folded in (see git history).

@@ -1,0 +1,26 @@
+[project]
+name = "zeromind"
+version = "0.1.0"
+description = "ZeroMind read plane: data spine, analytics, nudge pipeline, dashboard API."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "tenacity>=8.5",
+]
+
+[project.optional-dependencies]
+llm = ["litellm"]
+rag = ["qdrant-client"]
+ml = ["transformers", "sentence-transformers"]
+graph = ["langgraph"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zeromind"]
