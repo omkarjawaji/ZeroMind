@@ -97,7 +97,7 @@ Simple, but every agent shares a process with the write tools. A prompt-injected
 
 ## Action Items
 
-1. [ ] P0: create monorepo skeleton `packages/{papertrade,zeromind,zeromind_executor,announcements_mcp}`, `web/`, CI.
+1. [ ] P0: create monorepo skeleton `apps/{zeromind,zeromind_executor,papertrade,announcements_mcp,kite_readonly_proxy}`, `web/`, CI.
 2. [ ] P0: define ports/interfaces: `BrokerReadPort`, `BrokerExecutionPort`, `MarketDataProvider`, `FundamentalsProvider`, `MFDataProvider`, `AnnouncementsProvider`, `TransactionHistoryImporter`, `ApprovalChannel`.
 3. [ ] P0: build `kite-readonly-proxy` with an allowlist of `get_*` tools; contract-test that write tools are unreachable through it.
 4. [ ] P0: decide Langfuse hosting (Cloud for dev vs Compose).
