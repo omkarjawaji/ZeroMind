@@ -1,0 +1,16 @@
+[project]
+name = "announcements-mcp"
+version = "0.1.0"
+description = "Own NSE/BSE corporate-announcements MCP server (ADR-0004)."
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "tenacity>=8.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/announcements_mcp"]
